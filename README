@@ -1,9 +1,43 @@
 first-floor
 ===========
 
-Description goes here.
+An extension for ActionController::Base. I'm lazy and am tired of:
+
+- Updating controller code to do what I want for every project
+- Copying the same controller centralization code between projects. It's not
+  DRY. Eventually, things that aren't DRY begin to smell.
+
+So, what am I doing here?
+
+This gem defines ActionController::FirstFloor, which inherits 
+ActionController::Base
+
+It defines the following common REST methods:
+* index
+* show
+* new
+* create
+* edit
+* update
+* destroy
+
+It also defines render_response, which takes an object, a template name and 
+an optional status. The seven methods utilize render_response to
+render a response. HTML, JSON, XML and YAML are supported. The extension of 
+the request will determine the response format. Template names are presumed
+to be the method named itself. Objects used within the templates are 
+assumed to be the object name. For instance, you have object Foo.
+
+* An index will return @foos
+* show will use @foo
+
+In my workflow, I generate model and controller with rspec's generator, and
+then can rip out the guts of the generated controllers in favor of FirstFloor.
+
+My next step is, of course, improving my project generation process.
+
 
 COPYRIGHT
 =========
 
-Copyright (c) 2008 Nathan L. Walls. See LICENSE for details.
+Copyright (c) 2009 Rex Luther Corporation. See LICENSE for details.
