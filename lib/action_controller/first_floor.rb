@@ -105,4 +105,11 @@ class ActionController::FirstFloor < ActionController::Base
     end
   end
 
+  protected
+  def check_validation(obj)    
+    unless obj.valid?
+      raise ActiveRecord::ActiveRecordError, "This record is invalid."
+    end
+  end
+
 end
