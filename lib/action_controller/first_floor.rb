@@ -46,7 +46,7 @@ class ActionController::FirstFloor < ActionController::Base
   def update
     obj_class = controller_name.to_s.singularize.titleize
     obj_name  = controller_name.to_s.singularize
-    @obj = obj_class.constantize.find(params[:id])
+    @obj      = obj_class.constantize.find(params[:id])
     
     if @obj.update_attributes( params[obj_name.to_sym] )
       check_validation(@obj)
@@ -92,10 +92,13 @@ class ActionController::FirstFloor < ActionController::Base
     else
       klass = obj.class    
     end
+
     namespace = klass.to_s.downcase.pluralize
+
     if /^Admin/.match( self.class.to_s )
       namespace = "admin/#{namespace}"
     end
+
     respond_to do |format|
       format.html { render :template => "#{namespace}/#{tmpl}.html.erb",
                                                  :status => status }
