@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Nathan L. Walls"]
   s.date = %q{2009-02-22}
-  s.description = %q{TODO}
+  s.description = %q{A gem to DRY out controller code. It lives just a bit above 'ActionController::Base'}
   s.email = %q{nathan@rexluther.com}
   s.files = ["VERSION.yml", "lib/action_controller", "lib/action_controller/first_floor.rb", "test/first_floor_test.rb", "test/test_helper.rb"]
   s.has_rdoc = true
