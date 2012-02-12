@@ -37,4 +37,4 @@ end
 #   t.verbose = true
 # end
 
-task :default => :rcov
+#task :default => :rcov
