@@ -100,7 +100,8 @@ class ActionController::FirstFloor < ActionController::Base
     end
 
     respond_to do |format|
-      format.html { render :status => status }
+      format.html { render :template => "#{namespace}/#{tmpl}",
+                                                 :status => status }
       format.xml  { render :xml  => obj.to_xml,  :status => status }
       format.json { render :json => obj.to_json, :status => status }
       format.yaml { render :text => obj.to_yaml, :status => status }
