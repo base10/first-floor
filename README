@@ -34,10 +34,11 @@ assumed to be the object name. For instance, you have object Foo.
 In my workflow, I generate model and controller with rspec's generator, and
 then can rip out the guts of the generated controllers in favor of FirstFloor.
 
-My next step is, of course, improving my project generation process.
-
+Next steps: 
+- improving my project generation process.
+- Adding a test suite
 
 COPYRIGHT
 =========
 
-Copyright (c) 2009 Rex Luther Corporation. See LICENSE for details.
+Copyright (c) 2009-2012 Nathan L. Walls. See LICENSE for details.
