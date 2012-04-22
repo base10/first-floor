@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "first-floor"
-  s.version = "0.2.0"
+  s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Nathan L. Walls"]
-  s.date = "2012-02-12"
+  s.date = "2012-04-22"
   s.description = "Takes care of the basic seven CRUD controller methods against HTML, XML, JSON and YAML. This was very useful with Rails 2.x. Under Rails 3 and later, this isn't quite as necessary, since rendering became a lot easier."
   s.email = "nathan@wallscorp.us"
   s.extra_rdoc_files = [
