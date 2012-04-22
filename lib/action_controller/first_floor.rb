@@ -30,7 +30,8 @@ class ActionController::FirstFloor < ActionController::Base
     else
       eval( "@#{obj_name} = @obj" )
 
-      flash[:notice] = "Cannot create this #{obj_class}. There were some errors."
+      flash[:alert] = "Cannot create this #{obj_class}. There were some errors."
+      flash[:notice] = flash[:alert]
       flash[:status] = 400
       render_response( eval( "@#{obj_name}" ), 'new', 400 )
     end
@@ -58,7 +59,8 @@ class ActionController::FirstFloor < ActionController::Base
     else
       eval( "@#{obj_name} = @obj" )
 
-      flash[:notice] = "#{obj_class} had some errors and was not updated."
+      flash[:alert] = "#{obj_class} had some errors and was not updated."
+      flash[:notice] = flash[:alert]
       flash[:status] = 400
       render_response( eval( "@#{obj_name}" ), 'edit', 400 )
     end
